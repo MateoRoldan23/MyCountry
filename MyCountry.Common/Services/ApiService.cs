@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace MyCountry.Common.Services
 {
-    public class ApiService
+    public class ApiService : IApiService
     {
         public async Task<Response> GetListAsync<T>(
               string urlBase,
@@ -34,7 +34,8 @@ namespace MyCountry.Common.Services
                         Message = result,
                     };
                 }
-                //falta deserializar el json
+
+
                 var list = JsonConvert.DeserializeObject<List<T>>(result);
                 return new Response
                 {

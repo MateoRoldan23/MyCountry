@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountry.Common", "MyCountry.Common\MyCountry.Common.csproj", "{408C31F9-93FC-4CBF-990F-BE9A7A332F72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCountry.Common", "MyCountry.Common\MyCountry.Common.csproj", "{408C31F9-93FC-4CBF-990F-BE9A7A332F72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountry.Prism", "MyCountry.Prism\MyCountry.Prism\MyCountry.Prism.csproj", "{8AC75477-BA79-4DFE-8E07-C0AC13BF0B9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCountry.Prism", "MyCountry.Prism\MyCountry.Prism\MyCountry.Prism.csproj", "{8AC75477-BA79-4DFE-8E07-C0AC13BF0B9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountry.Prism.Android", "MyCountry.Prism\MyCountry.Prism.Android\MyCountry.Prism.Android.csproj", "{0C0C75A8-521F-4469-A19A-9BF2D1406A27}"
 EndProject

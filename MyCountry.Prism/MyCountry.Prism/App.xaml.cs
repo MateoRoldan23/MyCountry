@@ -4,6 +4,7 @@ using MyCountry.Prism.ViewModels;
 using MyCountry.Prism.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyCountry.Common.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyCountry.Prism
@@ -23,13 +24,14 @@ namespace MyCountry.Prism
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/ListPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<ListPage, ListPageViewModel>();
         }
     }
 }
