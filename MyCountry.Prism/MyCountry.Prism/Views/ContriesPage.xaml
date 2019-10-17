@@ -5,7 +5,18 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyCountry.Prism.Views.ContriesPage"
              Title="{Binding Title}">
-    <StackLayout>
-        
+    <StackLayout
+        Padding="10">
+        <ListView
+            HasUnevenRows="True"
+            ItemsSource="{Binding Cuontries}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

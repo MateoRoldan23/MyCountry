@@ -1,4 +1,5 @@
-﻿using MyCountry.Common.Services;
+﻿using MyCountry.Common.Model;
+using MyCountry.Common.Services;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -43,7 +44,29 @@ namespace MyCountry.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            await _navigationService.NavigateAsync("ContriesPage");
+            var url = App.Current.Resources["UrlAPI"].ToString();
+
+            var response = await _apiService.GetListAsync<Country>(
+                url,
+                "/rest",
+                "/v2/all");
+
+            if (!response.IsSuccess)
+            {
+                IsRunning = false;
+                IsEnabled = true;
+                await App.Current.MainPage.DisplayAlert("Error", "check data entry", "accept");
+                return;
+            }
+
+            var country = response.Result;
+            var parameters = new NavigationParameters
+            {
+                { "Country", country }
+            };
+
+
+            await _navigationService.NavigateAsync("ContriesPage", parameters);
 
             IsRunning = false;
             IsEnabled = true;
