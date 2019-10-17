@@ -6,6 +6,7 @@ namespace MyCountry.Prism.ViewModels
 {
     public class ListPageViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private DelegateCommand _listCommand;
         private bool _isEnabled;
@@ -15,9 +16,10 @@ namespace MyCountry.Prism.ViewModels
             INavigationService navigationService,
             IApiService apiService) : base(navigationService)
         {
+            _navigationService = navigationService;
+            _apiService = apiService;
             Title = "List of Contries";
             IsEnabled = true;
-            _apiService = apiService;
         }
 
         public DelegateCommand ListCommand => _listCommand ?? (_listCommand = new DelegateCommand(list));
@@ -41,10 +43,11 @@ namespace MyCountry.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            await App.Current.MainPage.DisplayAlert("OK", "ingreso", "Accept");
+            await _navigationService.NavigateAsync("ContriesPage");
 
             IsRunning = false;
             IsEnabled = true;
+
         }
     }
 }

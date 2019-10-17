@@ -32,6 +32,7 @@ namespace MyCountry.Prism
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<ListPage, ListPageViewModel>();
+            containerRegistry.RegisterForNavigation<ContriesPage, ContriesPageViewModel>();
         }
     }
 }
