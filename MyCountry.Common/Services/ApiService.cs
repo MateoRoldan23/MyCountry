@@ -1,16 +1,15 @@
-﻿using System;
+﻿using MyCountry.Common.Model;
+using Newtonsoft.Json;
+using System;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Threading.Tasks;
-using MyCountry.Common.Model;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace MyCountry.Common.Services
 {
     public class ApiService : IApiService
     {
-        public async Task<Response<ObservableCollection<CountryResponse>>> GetListAsync<T>(
+        public async Task<Response<ObservableCollection<CountryResponse>>> GetListAsync(
               string urlBase,
               string servicePrefix,
               string controller)
@@ -29,7 +28,7 @@ namespace MyCountry.Common.Services
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    return new Response<ObservableCollection<CountryResponse >>
+                    return new Response<ObservableCollection<CountryResponse>>
                     {
                         IsSuccess = false,
                         Message = result,

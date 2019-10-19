@@ -32,10 +32,10 @@ namespace MyCountry.Prism.ViewModels
         {
             var url = App.Current.Resources["UrlAPI"].ToString();
 
-            var response = await _apiService.GetListAsync<CountryResponse>(
+            var response = await _apiService.GetListAsync(
             url,
-            "/rest",
-            "/v2/all");
+            "rest/v2",
+            "/all");
 
             if (!response.IsSuccess)
             {

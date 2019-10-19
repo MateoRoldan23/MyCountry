@@ -1,10 +1,10 @@
-﻿using Prism;
-using Prism.Ioc;
+﻿using MyCountry.Common.Services;
 using MyCountry.Prism.ViewModels;
 using MyCountry.Prism.Views;
+using Prism;
+using Prism.Ioc;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MyCountry.Common.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyCountry.Prism
@@ -31,7 +31,6 @@ namespace MyCountry.Prism
         {
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
-           ///containerRegistry.RegisterForNavigation<ListPage, ListPageViewModel>();
             containerRegistry.RegisterForNavigation<ContriesPage, ContriesPageViewModel>();
         }
     }
