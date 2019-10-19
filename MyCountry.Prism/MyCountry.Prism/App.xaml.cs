@@ -24,14 +24,14 @@ namespace MyCountry.Prism
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/ListPage");
+            await NavigationService.NavigateAsync("NavigationPage/ContriesPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<ListPage, ListPageViewModel>();
+           ///containerRegistry.RegisterForNavigation<ListPage, ListPageViewModel>();
             containerRegistry.RegisterForNavigation<ContriesPage, ContriesPageViewModel>();
         }
     }

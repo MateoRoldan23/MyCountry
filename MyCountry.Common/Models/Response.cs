@@ -1,11 +1,11 @@
 ﻿namespace MyCountry.Common.Model
 {
-    public class Response
+    public class Response<Respo> where Respo: class
     {
         public bool IsSuccess { get; set; }
 
         public string Message { get; set; }
 
-        public object Result { get; set; }
+        public Respo Result { get; set; }
     }
 }
